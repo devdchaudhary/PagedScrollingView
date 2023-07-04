@@ -22,6 +22,7 @@ struct SwiftUIView: View {
     var body: some View {
         VStack {
             PagedScrollingView(data: data, showVerticalIndicator: false, showHorizontalIndicator: false, swiftUIView: SingleView(data: data))
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
     }
 }
