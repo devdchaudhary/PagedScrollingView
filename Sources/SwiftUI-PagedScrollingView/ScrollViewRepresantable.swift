@@ -3,17 +3,19 @@ import SwiftUI
 
 public struct PagedScrollingView<Content: View>: UIViewRepresentable {
 
+    let data: [Any]
     let showVerticalIndicator: Bool
     let showHorizontalIndicator: Bool
     let swiftUIView: Content
     
-    public init(showVerticalIndicator: Bool, showHorizontalIndicator: Bool, swiftUIView: Content) {
+    public init(data: [Any], showVerticalIndicator: Bool, showHorizontalIndicator: Bool, swiftUIView: Content) {
+        self.data = data
         self.showVerticalIndicator = showVerticalIndicator
         self.showHorizontalIndicator = showHorizontalIndicator
         self.swiftUIView = swiftUIView
     }
 
-    public func makeUIView(context: Context) -> some UIView {
+    public func makeUIView(context: Context) -> UIScrollView {
         
         let view = UIScrollView()
         
@@ -33,9 +35,13 @@ public struct PagedScrollingView<Content: View>: UIViewRepresentable {
         return view
     }
     
-    public func updateUIView(_ uiView: UIViewType, context: Context) {
+    public func updateUIView(_ uiView: UIScrollView, context: Context) {
+
+        uiView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * CGFloat(data.count))
         
-        
+        for i in 0..<uiView.subviews.count{
+            uiView.subviews[i].frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * CGFloat(data.count))
+        }
     }
     
     public func makeCoordinator() -> Coordinator {
