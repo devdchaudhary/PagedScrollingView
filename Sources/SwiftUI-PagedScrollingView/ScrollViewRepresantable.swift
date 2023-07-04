@@ -6,6 +6,12 @@ public struct PagedScrollingView<Content: View>: UIViewRepresentable {
     let showVerticalIndicator: Bool
     let showHorizontalIndicator: Bool
     let swiftUIView: Content
+    
+    public init(showVerticalIndicator: Bool, showHorizontalIndicator: Bool, swiftUIView: Content) {
+        self.showVerticalIndicator = showVerticalIndicator
+        self.showHorizontalIndicator = showHorizontalIndicator
+        self.swiftUIView = swiftUIView
+    }
 
     public func makeUIView(context: Context) -> some UIView {
         
@@ -24,7 +30,7 @@ public struct PagedScrollingView<Content: View>: UIViewRepresentable {
         view.isPagingEnabled = true
         view.delegate = context.coordinator
         
-        return view        
+        return view
     }
     
     public func updateUIView(_ uiView: UIViewType, context: Context) {
