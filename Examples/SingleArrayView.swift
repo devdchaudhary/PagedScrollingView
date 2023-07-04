@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SingleArrayView: View {
     
-    let data: [Int]
-    
+    let data: [Model]
+
     var body: some View {
         ForEach(data, id: \.self) { i in
             VStack {
-                Text("Number is \(i)")
+                Text("Number is \(i.number)")
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
