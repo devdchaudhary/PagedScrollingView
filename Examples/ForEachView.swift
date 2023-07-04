@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SingleArrayView: View {
+struct ForEachView: View {
     
     let data: [Model]
 
