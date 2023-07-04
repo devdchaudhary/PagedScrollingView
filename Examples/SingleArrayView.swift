@@ -10,14 +10,13 @@ import SwiftUI
 struct SingleArrayView: View {
     
     let data: [Int]
-
+    
     var body: some View {
-        ForEach(data, id:\.self) { i in
+        ForEach(data, id: \.self) { i in
             VStack {
-                Text("This is data no \(i)")
-                    .font(.system(15))
-                    .foregroundColor(.black)
+                Text("Number is \(i)")
             }
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
     }
 }

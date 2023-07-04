@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
-    let data = [1,2,3,4,5,6,7]
+    let data: [Int] = [1,2,3,4,5,6,7]
     
     var body: some View {
-        
-        PagedScrollingView(swiftUIView: SingleArrayView(data: data))
-        
+        VStack {
+            PagedScrollingView(data: data, showVerticalIndicator: false, showHorizontalIndicator: false, swiftUIView: SingleView(data: data))
+        }
     }
 }
 
