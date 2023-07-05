@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ForEachView: View {
     
-    let data: [Model]
-
+    @Binding var data: [Model]
+    
     var body: some View {
-        ForEach(data, id: \.self) { i in
-            VStack {
-                Text("Number is \(i.number)")
-            }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        ForEach(data, id: \.id) { i in
+            Image(i.number.description)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
     }
 }

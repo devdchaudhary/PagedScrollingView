@@ -23,9 +23,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftUI-PagedScrollingView",
-            dependencies: []),
-        .testTarget(
-            name: "SwiftUI-PagedScrollingViewTests",
-            dependencies: ["SwiftUI-PagedScrollingView"]),
+            dependencies: [],
+            resources: [.process("Resources")]
+        )
     ]
 )
