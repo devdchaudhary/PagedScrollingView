@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ContentView: View {
+struct ContentView: View {
     
     @State var data: [Model] = []
     
