@@ -50,6 +50,8 @@ struct ContentView: View {
 }
 ```
 
+https://github.com/devdchaudhary/SwiftUI-PagedScrollingView/assets/52855516/4e8f5fbe-4e3d-47a7-afca-4055ca3588da
+
 You can pass a boolean for showing vertical or horizontal indicators.
 
 Then inside your ForEach View using a ForEach loop create your single item view. 
@@ -82,7 +84,3 @@ struct SingleView: View {
 }
 
 ```
-
-
-
-
