@@ -38,7 +38,7 @@ struct ContentView: View {
     @State var data: [Model] = []
     
     var body: some View {
-        PagedScrollingView(data: data, showVerticalIndicator: false, showHorizontalIndicator: false, swiftUIView: SingleView(data: data))
+        PagedScrollingView(data: data, showVerticalIndicator: false, showHorizontalIndicator: false, swiftUIView: ForEachView(data: $data))
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .onAppear {
                 for i in 0...14 {
@@ -66,9 +66,9 @@ struct Model: Hashable {
     
 }
 
-struct SingleView: View {
+struct ForEachView: View {
     
-    let data: [Model]
+    @Binding var data: [Model]
     
     var body: some View {
         ForEach(data, id: \.id) { i in
@@ -76,9 +76,6 @@ struct SingleView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                .onAppear {
-                    print("image")
-                }
         }
     }
 }
