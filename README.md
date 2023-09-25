@@ -50,7 +50,7 @@ struct ContentView: View {
 }
 ```
 
-https://github.com/devdchaudhary/SwiftUI-PagedScrollingView/assets/52855516/4e8f5fbe-4e3d-47a7-afca-4055ca3588da
+https://github.com/devdchaudhary/PagedScrollingView/assets/52855516/eb1f1089-21ec-4718-9157-12798ef081f8
 
 You can pass a boolean for showing vertical or horizontal indicators.
 
